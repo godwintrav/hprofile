@@ -22,6 +22,8 @@ jobs:
 
       - name: Run Checkstyle
         run: mvn checkstyle:checkstyle
+
+      - name: Check ENV  
         run: echo ${{ secrets.SONAR_PROJECT_KEY }}
 
       # ✅ Official SonarCloud scanner setup
