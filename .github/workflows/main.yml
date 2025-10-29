@@ -22,6 +22,7 @@ jobs:
 
       - name: Run Checkstyle
         run: mvn checkstyle:checkstyle
+        run: echo ${{ secrets.SONAR_PROJECT_KEY }}
 
       # ✅ Official SonarCloud scanner setup
       - name: SonarCloud Scan
@@ -32,6 +33,6 @@ jobs:
           args: >
             -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.host.url=${{ secrets.SONAR_URL }}
             -Dsonar.sources=src
             -Dsonar.java.binaries=target/classes
