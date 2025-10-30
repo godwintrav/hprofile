@@ -39,6 +39,7 @@ jobs:
       #       -Dsonar.java.binaries=target/classes
 
   BUILD_AND_PUBLISH:
+    needs: Testing
     runs-on: ubuntu-latest    
     steps:
       - name: Checkout code
